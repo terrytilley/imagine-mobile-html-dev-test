@@ -1,28 +1,32 @@
 $(document).ready(function() {
 
   function nextLayer() {
-    var next = $('.current').next('.hide');
-    next.removeClass('hide')
-        .addClass('current')
-        .prev('.current')
-        .removeClass('current')
-        .addClass('hide');
+    var currentLayer = $('#layers > .current');
+    if (currentLayer.next().length > 0) {
+      currentLayer.next().addClass('current');
+      currentLayer.removeClass('current');
+    } else {
+      $('#layers > div:first').addClass('current');
+      currentLayer.removeClass('current');
+    }
   }
 
   function prevLayer() {
-    var prev = $('.current').prev('.hide');
-    prev.removeClass('hide')
-        .addClass('current')
-        .next('.current')
-        .removeClass('current')
-        .addClass('hide');
+    var currentLayer = $('#layers > .current');
+    if (currentLayer.prev().length > 0) {
+      currentLayer.prev().addClass('current');
+      currentLayer.removeClass('current');
+    } else {
+      $('#layers > div:last').addClass('current');
+      currentLayer.removeClass('current');
+    }
   }
 
   function tiltNavListener(event) {
     var gamma = Math.round(event.gamma);
 
     if (gamma === 15) {
-      nextLayer().fadeIn('slow');
+      nextLayer();
     } else if (gamma === -15) {
       prevLayer();
     }
@@ -52,3 +56,22 @@ $(document).ready(function() {
   }
 
 });
+
+
+// function nextLayer() {
+//   var next = $('.current').next('.hide');
+//   next.removeClass('hide')
+//   .addClass('current')
+//   .prev('.current')
+//   .removeClass('current')
+//   .addClass('hide');
+// }
+//
+// function prevLayer() {
+//   var prev = $('.current').prev('.hide');
+//   prev.removeClass('hide')
+//   .addClass('current')
+//   .next('.current')
+//   .removeClass('current')
+//   .addClass('hide');
+// }

@@ -412,6 +412,9 @@ div {
 .hide {
   display: none; }
 
+.current {
+  display: block; }
+
 @media screen and (orientation: portrait) {
   .main-section {
     width: 100vw; }
