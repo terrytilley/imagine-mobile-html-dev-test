@@ -56,22 +56,3 @@ $(document).ready(function() {
   }
 
 });
-
-
-// function nextLayer() {
-//   var next = $('.current').next('.hide');
-//   next.removeClass('hide')
-//   .addClass('current')
-//   .prev('.current')
-//   .removeClass('current')
-//   .addClass('hide');
-// }
-//
-// function prevLayer() {
-//   var prev = $('.current').prev('.hide');
-//   prev.removeClass('hide')
-//   .addClass('current')
-//   .next('.current')
-//   .removeClass('current')
-//   .addClass('hide');
-// }
