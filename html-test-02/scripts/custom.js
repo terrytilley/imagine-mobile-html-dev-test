@@ -24,14 +24,21 @@ $(document).ready(function() {
 
   function tiltNavListener(event) {
     var gamma = Math.round(event.gamma);
+    var beta = Math.round(event.beta);
+    var portraitOrientation = (window.orientation === 0 || window.orientation === 180);
+    var landscapeOrientation = (window.orientation === 90 || window.orientation === -90);
 
-    if (gamma === 15) {
+    if (gamma === 15 && portraitOrientation) {
       nextLayer();
-    } else if (gamma === -15) {
+    } else if (gamma === -15 && portraitOrientation) {
       prevLayer();
     }
 
-    $('#test').html(gamma);
+    if (beta === 10 && landscapeOrientation) {
+      nextLayer();
+    } else if (beta === -10 && landscapeOrientation) {
+      prevLayer();
+    }
   }
 
   function imgSwapListener() {
