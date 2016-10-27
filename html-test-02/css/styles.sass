@@ -1,0 +1,46 @@
+@import 'normalize'
+
+img
+  max-width: 100%
+  height: auto
+
+div
+  margin-bottom: -4px
+
+// .current
+
+.hide
+  display: none
+
+// Portrait
+@media screen and (orientation: portrait)
+  .main-section
+    width: 100vw
+
+  .tilt-left,
+  .tilt-right
+    width: 50vw
+
+  .tilt-left
+    float: left
+
+  .tilt-right
+    float: right
+
+// Landscape
+@media screen and (orientation: landscape)
+  .main-section
+    width: 56vw
+    float: left
+
+  .main-section img
+    height: 100vh
+
+  .tilt-left,
+  .tilt-right
+    width: 43.99vw
+    float: left
+
+  .tilt-left img,
+  .tilt-right img
+    // height: 50vh
