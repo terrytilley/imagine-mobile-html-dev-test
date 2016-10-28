@@ -410,10 +410,20 @@ div {
   margin-bottom: -4px; }
 
 .hide {
-  display: none; }
+  -webkit-transition: opacity 1s ease-in-out;
+  -moz-transition: opacity 1s ease-in-out;
+  -o-transition: opacity 1s ease-in-out;
+  transition: opacity 1s ease-in-out;
+  opacity: 0; }
 
 .current {
-  display: block; }
+  position: absolute;
+  top: 0;
+  -webkit-transition: opacity 1s ease-in-out;
+  -moz-transition: opacity 1s ease-in-out;
+  -o-transition: opacity 1s ease-in-out;
+  transition: opacity 1s ease-in-out;
+  opacity: 1; }
 
 @media screen and (orientation: portrait) {
   .main-section {

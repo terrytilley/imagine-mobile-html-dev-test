@@ -3,7 +3,9 @@ $(document).ready(function() {
   function nextLayer() {
     var currentLayer = $('#layers > .current');
     if (currentLayer.next().length > 0) {
+      // currentLayer.fadeOut("slow");
       currentLayer.next().addClass('current');
+      // currentLayer.next().fadeIn("slow");
       currentLayer.removeClass('current');
     } else {
       $('#layers > div:first').addClass('current');
@@ -28,15 +30,15 @@ $(document).ready(function() {
     var portraitOrientation = (window.orientation === 0 || window.orientation === 180);
     var landscapeOrientation = (window.orientation === 90 || window.orientation === -90);
 
-    if (gamma === 15 && portraitOrientation) {
+    if (gamma === 20 && portraitOrientation) {
       nextLayer();
-    } else if (gamma === -15 && portraitOrientation) {
+    } else if (gamma === -20 && portraitOrientation) {
       prevLayer();
     }
 
-    if (beta === 10 && landscapeOrientation) {
+    if (beta === 20 && landscapeOrientation) {
       nextLayer();
-    } else if (beta === -10 && landscapeOrientation) {
+    } else if (beta === -20 && landscapeOrientation) {
       prevLayer();
     }
   }
